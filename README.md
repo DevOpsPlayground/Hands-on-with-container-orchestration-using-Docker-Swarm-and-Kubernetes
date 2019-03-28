@@ -179,20 +179,14 @@ Time to create LoadBalancer by creating ```loadbalancer.yml```
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    run: web-app
-  name: lb
-  namespace: default
+  name: my-lb
 spec:
-  clusterIP:
-  externalTrafficPolicy: Cluster
-  ports:
-  - nodePort:
-    port: 80
-    protocol: TCP
-    targetPort: 80
   selector:
-    run: web-app
+    app: web-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
   type: LoadBalancer
 ```
 And now lets apply our configuration by typing ```kubectl create -f LoadBalancer.yml```
