@@ -1,4 +1,5 @@
 ## Loadbalance traffic to our containers with haproxy
+[Home](../README.md) | [Deploy web application as standalone container](standalone.md) | [Deploy application on the Swarm cluster](swarm.md) | [Deploy application on the Kubernetes cluster](k8s.md)
 #### Lets move to the master node
 We need to create haproxy.cfg file which will contain configuration of our loadbalncer
 Lets move away from ```app``` directory and move to the ```haproxy``` and create a loadbalancer configuration. We can do so by executing
@@ -39,3 +40,5 @@ It is a glimpse of the container world without orchestration. Lets cleanup and r
 ```
 docker rm -f `docker ps -a -q`
 ```
+
+[Next - Deploy application on the Swarm cluster](swarm.md)

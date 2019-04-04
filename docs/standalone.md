@@ -1,5 +1,5 @@
 ## Build and run the containerised application
-[Home](../README.md) | [Use load-balancer](docs/lb.md) | [Deploy application on the Swarm cluster](docs/swarm.md) | [Deploy application on the Kubernetes cluster](docs/k8s.md)
+[Home](../README.md) | [Use load-balancer](lb.md) | [Deploy application on the Swarm cluster](swarm.md) | [Deploy application on the Kubernetes cluster](k8s.md)
 
 #### Lets move to the master node
 For todays workshop I provided a web application We we will be deploying. You will find it in ```/app``` directory. You can move there by typing

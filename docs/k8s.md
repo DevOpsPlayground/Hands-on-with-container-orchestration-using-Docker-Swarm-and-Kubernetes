@@ -1,4 +1,7 @@
 ## Kubernetes
+[Home](../README.md) | [Deploy web application as standalone container](standalone.md) | [Use load-balancer](lb.md) | [Deploy application on the Swarm cluster](swarm.md)
+
+#### Lets move to the master node
 Initialise the cluster with:
 ```
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
@@ -119,3 +122,5 @@ And change the number of replicas to ```3``` and apply the changes with:
 kubectl apply -f deployment.yml
 ```
 Lets have look on our loadbalncer now, We should see another endpoint added to the browser there there.
+
+##### Congratulations! - That was the last part of the workshops, if you have some questions We still have not answered <a href="mailto:ppilecki@icloud.com?subject=DevOps Playground">email</a> me :)

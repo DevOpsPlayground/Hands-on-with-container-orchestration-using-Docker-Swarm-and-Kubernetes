@@ -1,4 +1,5 @@
 ## Docker swarm
+[Home](../README.md) | [Deploy web application as standalone container](standalone.md) | [Use load-balancer](lb.md) | [Deploy application on the Kubernetes cluster](k8s.md)
 #### Lets move to the master node
 Our first step will be to initialise our swarm. We can do it by issuing the following command:
 ```
@@ -77,4 +78,6 @@ And lets get rid of our swarm by typing
 ```
 docker swarm leave --force
 ```
-We need to use ```--force``` flag on manager
+Note: We need to use ```--force``` flag on manager node.
+
+[Next - Deploy application on the Kubernetes cluster](k8s.md)
