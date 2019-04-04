@@ -1,5 +1,5 @@
 locals {
-  module_source_base = "git::ssh://git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2/"
+  module_source_base = "git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2/"
   stack_name = "dpg-ldn-31"
   count = "3"
   ssh_key_name = "dpg-ldn-31-key"
@@ -9,12 +9,12 @@ locals {
 
 }
 module "vpc" {
-  source = "${local.module_source_base}/modules/vpc"
+  source = "git::ssh://git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2//modules/vpc"
 	name = "${local.stack_name}-vpc"
 }
 
 module "animal" {
-  source = "${local.module_source_base}/modules/animal_names"
+  source = "git::ssh://git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2//modules/animal_names"
   count  = "${local.count}"
 }
 
@@ -25,12 +25,13 @@ data "template_file" "custom_install_script_linux" {
   template = "${file("scripts/userdata.sh.tpl")}"
 
   vars {
+    username = "${local.ssh_user}"
   }
 }
 ####
 
 module "linux_instances" {
-  source                    = "${local.module_source_base}/modules/linux_instance"
+  source                    = "git::ssh://git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2//modules/linux_instance"
   count                     = "${local.count}"
   stack_name                = "${local.stack_name}"
   vpc_id                    = "${module.vpc.vpc_id}"
@@ -45,7 +46,7 @@ module "linux_instances" {
 }
 
 module "dns" {
-  source       = "${local.module_source_base}/modules/dns"
+  source       = "git::ssh://git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2//modules/dns"
   count        = "${local.count}"
   r53_zone_id  = "${local.r53_zone_id}"
   animal_names = "${module.animal.names}"
