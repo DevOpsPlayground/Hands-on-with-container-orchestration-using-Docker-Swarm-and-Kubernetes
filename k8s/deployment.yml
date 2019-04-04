@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: web-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: web-app
@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: web-app
-          image: pil3q/app-for-playground
+          image: devopspg/web-app:1.0
