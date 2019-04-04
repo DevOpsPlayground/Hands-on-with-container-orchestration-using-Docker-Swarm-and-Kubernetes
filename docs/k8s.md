@@ -123,4 +123,4 @@ kubectl apply -f deployment.yml
 ```
 Lets have look on our loadbalncer now, We should see another endpoint added to the browser there there.
 
-##### Congratulations! - That was the last part of the workshops, if you have some questions We still have not answered <a href="mailto:ppilecki@icloud.com?subject=DevOps Playground">email</a> me :)
+##### Congratulations! - That was the last part of the workshops, if you have some questions We still have not answered <a href="mailto:ppilecki@icloud.com?subject=DevOps Playground&body=Hi Patrick, I have just finished your workshop and I would like to ask">email</a> me :)
