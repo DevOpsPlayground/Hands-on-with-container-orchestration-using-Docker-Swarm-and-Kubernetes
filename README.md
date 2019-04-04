@@ -8,4 +8,4 @@ Installation is specific for different OSes. The instructions can be found below
 - [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [Docker](https://docs.docker.com/install/)
 
-[Deploy web application as standalone container](doc/standalone.md) | [Use load-balancer](doc/lb.md) | [Deploy application on the Swarm cluster](doc/swarm.md) | [Deploy application on the Kubernetes cluster](doc/k8s.md)
+[Deploy web application as standalone container](docs/standalone.md) | [Use load-balancer](docs/lb.md) | [Deploy application on the Swarm cluster](docs/swarm.md) | [Deploy application on the Kubernetes cluster](docs/k8s.md)
