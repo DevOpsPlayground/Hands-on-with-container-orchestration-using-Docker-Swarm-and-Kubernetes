@@ -25,7 +25,7 @@ docker swarm join --token SWMTKN-1-<token> <private-ip>:2377
 That is it - We have our cluster ready, so lets deploy our application. To deploy the application all We need to do is to issue the following command:
 
 ```bash
-docker service create --name web-app --publish 80:80 --replicas 2 devopspg/web-app:1.0
+docker service create --name web-app --publish 8080:80 --replicas 2 devopspg/web-app:1.0
 ```
 We can access our application by typing host address in our browser, lets do that. We can check where our containers are running by executing on our master node
 ```bash
