@@ -1,7 +1,7 @@
 locals {
   module_source_base = "git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2/"
   stack_name = "dpg-ldn-31"
-  count = "3"
+  count = "1"
   ssh_key_name = "dpg-ldn-31-key"
   ssh_user = "playground"
 	ssh_password = "RicknMortyS4"

@@ -15,7 +15,6 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce=18.06.0~ce~3-0~ubuntu containerd.io
-sudo usermod -aG docker ubuntu
 sudo systemctl enable docker
 
 #K8S
@@ -31,3 +30,14 @@ sudo sysctl -p
 sudo systemctl enable kubelet
 sudo kubeadm config images pull
 sudo git clone https://github.com/Pil3q/pg-v1.git
+
+
+echo "Adding ${username} user to sudoers"
+sudo tee /etc/sudoers.d/${username} > /dev/null <<"EOF"
+${username} ALL=(ALL:ALL) ALL
+EOF
+sudo chmod 0440 /etc/sudoers.d/${username}
+sudo usermod -a -G sudo ${username}
+
+echo "Adding ${username} user to docker group"
+sudo usermod -a -G docker ${username}
