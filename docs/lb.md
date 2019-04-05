@@ -32,9 +32,9 @@ backend backendnodes
 ```
 Finally run lets run the container with the load-balancer using:
 ```bash
-docker run --detach --name load-balancer --volume `pwd`/haproxy:/usr/local/etc/haproxy:ro --publish 80:80 haproxy
+docker run --detach --name load-balancer --volume `pwd`/haproxy:/usr/local/etc/haproxy:ro --publish 8081:80 haproxy
 ```
-Now lets type our ```<master-node-address>``` in the browser, then refresh the page a few times. You should see how traffic is directed to the different nodes/containers.
+Now lets type our ```<master-node-address>:8081``` in the browser, then refresh the page a few times. You should see how traffic is directed to the different nodes/containers.
 
 It is a glimpse of the container world without orchestration. Lets cleanup and remove the containers on both nodes by executing:
 ```bash
