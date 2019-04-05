@@ -29,3 +29,5 @@ sudo apt-get install -y kubelet kubeadm kubectl
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 sudo systemctl enable kubelet
+sudo kubeadm config images pull
+sudo git clone https://github.com/Pil3q/pg-v1.git
