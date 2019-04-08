@@ -73,16 +73,16 @@ Now lets deploy our application with:
 ```bash
 kubectl create -f deployment.yml
 ```
-Our deployment will only be available inside our cluster for now so We need to expose it. Time to create LoadBalancer. In our directory you should find ```loadbalancer.yml``` file, lets have a look on it:
+Our deployment will only be available inside our cluster for now so We need to expose it. Time to create service which will make our deployment available. In our directory you should find ```service.yml``` file, lets have a look on it:
 ```bash
-vim loadbalncer.yml
+vim service.yml
 ```
 It should look like:
 ```yml
 apiVersion: v1
 kind: Service
 metadata:
-  name: loadbalncer
+  name: hello-internet
 spec:
   selector:
     app: web-app
@@ -90,29 +90,29 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
-  type: LoadBalancer
+  type: NodePort
 ```
 And now lets apply our configuration by typing
 ```bash
-kubectl create -f loadbalancer.yml
+kubectl create -f service.yml
 ```
 We should see it when typing
 ```bash
 kubectl get services
 ```
-and We can access our app by typing worker address and loadbalncer port in the browser.
+and We can access our app by typing ```<worker-address>:<service-port>``` in the browser.
 ``
 
 Now lets type
 ```bash
-kubectl describe service loadbalncer
+kubectl describe service hello-internet
 ```
-We should see that our loadbalancer is redirecting the traffic to the endpoints  which should match our pod ips. We can campare them by running that by running
+We should see that our service is redirecting the traffic to the endpoints  which should match our pod ips. We can compare them by running that by running
 ```bash
 kubectl get pods -o wide
 ```
 
-Now lets scale the service by editing number of replicas in our deployment.yml file and applying changes with
+Now lets scale the service by editing number of replicas in our ```deployment.yml``` file and applying changes with
 Lets type
 ```bash
 vim deployment.yml
@@ -121,10 +121,9 @@ And change the number of replicas to ```3``` and apply the changes with:
 ```bash
 kubectl apply -f deployment.yml
 ```
-Lets have look on our loadbalncer again by typing:
+Lets have look on our service again by typing:
 ```bash
-kubectl describe service loadbalncer
+kubectl describe service hello-internet
 ```
-We should see another endpoint added to the list We have seen before.
-
+We should see another endpoint added to the list We have seen before. Now We can also go to our web browser and type ```<worker-address>:<service-port>``` again and refresh the page a few times.
 ##### Congratulations! - That was the last part of the workshops. It is time for Q&A now. If You will some questions We will not have time to answer just <a href="mailto:ppilecki@icloud.com?subject=DevOps Playground&body=Hi Patrick, I have just finished your workshop and I would like to ask">email</a> me :)

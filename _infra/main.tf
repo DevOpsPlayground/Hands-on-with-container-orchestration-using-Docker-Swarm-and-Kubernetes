@@ -1,11 +1,12 @@
 locals {
   module_source_base = "git@github.ecs-digital.co.uk/ECSD/playground-frame.git?ref=v2/"
   stack_name = "dpg-ldn-31"
-  count = "1"
+  count = "2"
   ssh_key_name = "dpg-ldn-31-key"
   ssh_user = "playground"
 	ssh_password = "RicknMortyS4"
   r53_zone_id = "ZKL6DCZ2ESZ63"
+  instance_type = "t2.medium"
 
 }
 module "vpc" {
@@ -41,6 +42,7 @@ module "linux_instances" {
   ssh_key_name              = "${local.ssh_key_name}"
   ssh_user                  = "${local.ssh_user}"
   ssh_password              = "${local.ssh_password}"
+  instance_type             = "${local.instance_type}"
 
   custom_install_scripts = "${data.template_file.custom_install_script_linux.*.rendered}"
 }
@@ -62,4 +64,3 @@ output "ssh_user" {
 output "ssh_pw" {
   value = "${local.ssh_password}"
 }
-
