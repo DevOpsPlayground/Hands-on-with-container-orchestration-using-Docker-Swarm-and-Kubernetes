@@ -18,7 +18,7 @@ To start using your cluster, you need to run the following as a regular user:
 ```
 Copy and past those three commands as instructed
 
-Next step is to apply flannel, our container network configuration interface
+Next step is to apply flannel, our container network interface
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
