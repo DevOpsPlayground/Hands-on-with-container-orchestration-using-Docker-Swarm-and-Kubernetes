@@ -36,6 +36,7 @@ On your second instance you need to execute the joining command which was provid
 ```bash
 sudo kubeadm join <master-node>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
+Note: If you are using wetty please paste the joining command to the text editor of your choice and remove line break, then copy it again and paste on the worker node.
 ## Lets move to the master node
 If you cleared your terminal and did note the command you can create new token on the master node with:
 ```bash
