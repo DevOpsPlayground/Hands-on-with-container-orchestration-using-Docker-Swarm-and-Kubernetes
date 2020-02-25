@@ -63,7 +63,7 @@ Lets type
 ```bash
 docker ps
 ```
-on our master node this time. We should see 3 containers with our web application as the service automatically scaled on available nodes. Lets try to type our ```worker-ip:8080``` in the web browser now.
+on our master node this time. We should see 3 containers with our web application as the service automatically scaled on available nodes. Lets try to type our ```<master-node-address>:8080``` in the web browser now.
 
 Now It is time to take another step, right into the Kuberenetes, but before We do so, lets remove our service with
 ```bash
