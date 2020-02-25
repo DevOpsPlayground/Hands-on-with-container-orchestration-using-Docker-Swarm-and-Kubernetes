@@ -50,7 +50,7 @@ docker node ls
 ```
 and copy our worker node id and drain it with
 ```bash
-docker node update --availability drain <worker-node-id>
+docker node update --availability drain <master-node-id>
 ```
 ## Lets move to the worker node
 Lets see the containers on our worker node again by typing:
