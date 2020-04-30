@@ -12,7 +12,7 @@ On both instances You have ```docker```, ```kubeadm```, ```kubectl``` and ```kub
 Installation is specific for different OSes. The instructions can be found below:
 - [Docker](https://docs.docker.com/install/)
 - [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-## Note: This content is prepared for hands-on workshops, nevertheless if you would like to recreate to environment please see the scripts directory, you will need two ubuntu instances (local i.e virtualbox or cloud hosted)
+## Note: This content is prepared for hands-on workshops, nevertheless if you would like to recreate the environment please see the scripts directory, you will need two ubuntu instances (local i.e virtualbox or cloud hosted)
 ## Agenda
 The hands-on session will be divided to four parts:
 - [Deploy web application as standalone container](docs/standalone.md):
